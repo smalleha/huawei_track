@@ -1,0 +1,38 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name='track_v1'>
+    <link name='base_link'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.183042 0.56704 0.087598 0 -0 0</pose>
+        <mass>45621</mass>
+        <inertia>
+          <ixx>1.06399e+06</ixx>
+          <ixy>13503.8</ixy>
+          <ixz>1791.82</ixz>
+          <iyy>2.33664e+06</iyy>
+          <iyz>-5533.51</iyz>
+          <izz>3.39693e+06</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_fixed_joint_lump__track_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://track_v1/meshes/track_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_fixed_joint_lump__track_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://track_v1/meshes/track.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
