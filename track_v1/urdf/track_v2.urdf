@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="track_v1">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-1.6208E-16 1.1583E-15 -0.025"
+        rpy="0 0 0" />
+      <mass
+        value="29828" />
+      <inertia
+        ixx="984310"
+        ixy="-9.0893E-11"
+        ixz="-1.7323E-13"
+        iyy="2213600"
+        iyz="3.4518E-14"
+        izz="3197900" />
+    </inertial>
+  </link>
+  <link
+    name="track_link">
+    <inertial>
+      <origin
+        xyz="-0.52875 1.638 0.30026"
+        rpy="0 0 0" />
+      <mass
+        value="15793" />
+      <inertia
+        ixx="50884"
+        ixy="4560.7"
+        ixz="15.972"
+        iyy="119060"
+        iyz="-32.172"
+        izz="168440" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track_v1/meshes/track_v4.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track_v1/meshes/track_v4.dae" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="track_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="track_link" />
+    <axis
+      xyz="0.99999 -0.005014 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

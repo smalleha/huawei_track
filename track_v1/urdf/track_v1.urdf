@@ -20,6 +20,29 @@
         iyz="3.4518E-14"
         izz="3197900" />
     </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track_v1/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track_v1/meshes/base_link.STL" />
+      </geometry>
+    </collision>
   </link>
   <link
     name="track_link">
@@ -43,7 +66,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://track_v1/meshes/track.dae" />
+          filename="package://track_v1/meshes/track_link.STL" />
       </geometry>
       <material
         name="">
@@ -63,7 +86,7 @@
   </link>
   <joint
     name="track_joint"
-    type="fixed">
+    type="prismatic">
     <origin
       xyz="0 0 0"
       rpy="0 0 0" />
