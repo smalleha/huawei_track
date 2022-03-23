@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="robot_namespace" default="/"/>
+  <arg name="world" default="empty"/>
+  <arg name="ign_args" default=""/>
+  <arg name="name" default="limo"/>
+
+  <include file="$(find ros_ign_gazebo)/launch/ign_gazebo.launch">
+    <arg name="ign_args" value="-r -v 3 $(arg world).sdf"/>
+  </include>
+
+  <!-- URDF from param, package model -->
+  <!-- <param name="robot_description" textfile="$(find limo_description)/urdf/limo_ackerman.xacro" /> -->
+    <param name="robot_description" command="$(find xacro)/xacro '$(find limo_description)/urdf/limo_four_diff.xacro'
+        robot_namespace:=$(arg robot_namespace)" />
+    <node
+      pkg="ros_ign_gazebo"
+      type="create"
+      name="$(anon ros_ign_create_sphere)"
+      output="screen"
+      args="-world $(arg world) -param robot_description -name spawned -allow_renaming true -z 0 -y -5.2 -x 1.15">
+    </node>
+    <node
+      pkg="ros_ign_gazebo"
+      type="create"
+      name="$(anon ros_ign_create_cylinder)"
+      output="screen"
+      args="-world $(arg world) -file $(find track_v1)/models/model_2.sdf -name spawned -allow_renaming true -z -1.65 -y 0">
+    </node>
+    <!-- <node
+    pkg="ros_ign_bridge"
+    type="parameter_bridge"
+    name="$(anon ros_ign_bridge)"
+    output="screen"
+    args="/limo/cmd_vel@geometry_msgs/Twist@ignition.msgs.Twist /limo/odometry@nav_msgs/Odometry@ignition.msgs.Odometry
+          /limo/scan@sensor_msgs/LaserScan@ignition.msgs.LaserScan 
+    ">
+    </node>
+
+    <node pkg="ros_ign_bridge" type="parameter_bridge" name="ros_ign_bridge_joint_state_publisher" respawn="true"
+      args="/world/$(arg world)/model/$(arg name)/joint_state@sensor_msgs/JointState[ignition.msgs.Model">
+      <remap from="/world/$(arg world)/model/$(arg name)/joint_state" to="joint_state"/>
+    </node> -->
+
+</launch>

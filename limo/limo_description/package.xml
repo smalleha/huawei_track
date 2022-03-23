@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<package format="2">
+<package format="3">
   <name>limo_description</name>
   <version>0.0.0</version>
   <description>The limo_description package</description>
@@ -8,5 +8,23 @@
   <license>BSD 3-Clause</license>
 
   <buildtool_depend>catkin</buildtool_depend>
+  <!-- Fortress -->
+  <exec_depend condition="$IGNITION_VERSION == fortress">ignition-gazebo6</exec_depend>
+  <!-- Edifice -->
+  <exec_depend condition="$IGNITION_VERSION == edifice">ignition-gazebo5</exec_depend>
+  <!-- Citadel (default) -->
+  <exec_depend condition="$IGNITION_VERSION == citadel">ignition-gazebo3</exec_depend>
+  <exec_depend condition="$IGNITION_VERSION == ''">ignition-gazebo3</exec_depend>
 
+  <exec_depend>image_transport_plugins</exec_depend>
+  <exec_depend>ros_ign_bridge</exec_depend>
+  <exec_depend>ros_ign_gazebo</exec_depend>
+  <exec_depend>ros_ign_image</exec_depend>
+  <!-- See https://github.com/osrf/ros_ign/issues/40 -->
+  <!--exec_depend>ros_ign_point_cloud</exec_depend-->
+  <exec_depend>rqt_image_view</exec_depend>
+  <exec_depend>rqt_plot</exec_depend>
+  <exec_depend>rviz</exec_depend>
+
+  <replace>ros1_ign_gazebo_demos</replace>
 </package>
