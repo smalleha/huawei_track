@@ -1,0 +1,331 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+    <model name="limo_ackerman">
+        <link name="base_footprint">
+            <inertial>
+                <pose>0 0 0 0 0 0</pose>
+                <mass>2.3657<mass>
+                <inertial>
+                    <ixx>0.240306</ixx>
+                    <ixy>0</ixy>
+                    <ixz>8.713350</ixz>
+                    <iyy>0.961925</iyy>
+                    <iyz>0</iyz>
+                    <izz>0.961620</izz>
+                </inertial>
+            </inertial>
+            <collision name="base_footprinnt_fixed_joint_lump__base_link_collision">
+                <pose>0 0 0.15 0 0 0</pose>
+                <geometry>
+                    <box size="0.13 0.12 0.1"/>
+                </geometry>    
+            </collision>
+                <collision name="base_footprinnt_fixed_joint_lump__depth_camera_collision_collision1">
+                <pose>0.084 0 0.18 0 0 0</pose>
+                <geometry>
+                    <box size="0.02 0.06 0.015"/>
+                </geometry>    
+            </collision>
+            <collision name="base_footprinnt_fixed_joint_lump__imu_collision_collision2">
+                <pose>0 0 0.049999999 0 0 0</pose>
+                <geometry>
+                    <box size="0.001 0.001 0.001"/>
+                </geometry>    
+            </collision>
+            <collision name="base_footprinnt_fixed_joint_lump__laser_collision_collision3">
+                <pose>0.103 0 0.116 0 0 0</pose>
+                <geometry>
+                    <cylinder radius="0.032" length="0.016"/>
+                </geometry>    
+            </collision>
+            <visual name="base_footprinnt_fixed_joint_lump__base_link_visual">
+                <pose>0 0 0 0 0 1.57079</pose>
+                <geometry>
+                    <mesh>
+                        <scale>1 1 1</scale>
+                        <uri>meshes/limo_base.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+            <visual name="base_footprinnt_fixed_joint_lump__depth_camera_visual_visual1">
+                <pose>0.084 0 00.18 0 0 </pose>
+                <geometry>
+                    <box size="0.02 0.06 0.015"/>
+                </geometry> 
+                <material>
+                    <diffuse>0 0 0 1</diffuse>
+                    <ambient>0 0 0 1</ambient>
+                </material> 
+            </visual>
+            <visual name="base_footprinnt_fixed_joint_lump__imu_visual_visual2">
+                <pose>0 0 0.049999999 0 0 0 </pose>
+                <geometry>
+                    <box size="0.001 0.001 0.001"/>
+                </geometry> 
+                <material>
+                    <diffuse>0 0 0 1</diffuse>
+                    <ambient>0 0 0 1</ambient>
+                </material> 
+            </visual>
+            <visual name="base_footprinnt_fixed_joint_lump__laser_visual_visual3">
+                <pose>0.103 0 0.116 0 0 0</pose>
+                <geometry>
+                    <cylinder radius="0.02" length="0.01"/>
+                </geometry> 
+                <material>
+                    <diffuse>0 0 0 1</diffuse>
+                    <ambient>0 0 0 1</ambient>
+                </material> 
+            </visual>
+            
+            <sensor name="camera_front" type="rgbd_camera">
+                <camera name="camera_front">
+                    <horizontal_fov>1.3962634</horizontal_fov>
+                    <lens>
+                        <intrinsics>
+                        <fx>26261.151116249</fx>
+                        <fy>26261.151116249</fy>
+                        <cx>320.5</cx>
+                        <cy>240.5</cy>
+                        <s>0</s>
+                        </intrinsics>
+                    </lens>
+                    <distortion>
+                        <k1>0.0</k1>
+                        <k2>0.0</k2>
+                        <k3>0.0</k3>
+                        <p1>0.0</p1>
+                        <p2>0.0</p2>
+                        <center>0.5 0.5</center>
+                    </distortion>
+                    <image>
+                        <width>640</width>
+                        <height>480</height>
+                        <format>R8G88</format>
+                    </image>
+                    <clip>
+                        <near>0.02</near>
+                        <far>300</far>
+                    </clip>
+                    <depth_camera>
+                        <clip>
+                            <near>0.1</near>
+                            <far>10</far>
+                        </clip>
+                    </depth_camera>
+                    <noise>
+                        <type>gaussian</type>
+                        <mean>0</mean>
+                        <stddev>0.007</stddev>
+                    </noise>
+                </camera>
+                <always_on>1</always_on>
+                <update_rate>10</update_rate>
+                <visualize>0</visualize>
+                <topic>/limo_ackerman/rgbd_camera</topic>
+                <pose>0.084 0 0.18 0 -0 0</pose>
+            </sensor>
+            <gravity>true</gravity>
+            <sensor name="imu_sensor" type="imu">
+                <always_on>1</always_on>
+                <update_rate>100</update_rate>
+                <imu>
+                    <enable_orientation>0</enable_orientation>
+                    <angular_velocity>
+                        <x>
+                            <noise type="gaussian">
+                                <mean>0</mean>
+                                <stddev>0.009</stddev>
+                                <bias_mean>0.00075</bias_mean>
+                                <bias_stddev>0.005</bias_stddev>
+                                <dynamic_bias_stddev>0.00002</dynamic_bias_stddev>
+                                <dynamic_bias_correlation_time>400.0</dynamic_bias_correlation_time>
+                                <precision>0.00025</precision>
+                            </noise>
+                        </x>
+                        <y>
+                            <noise type="gaussian">
+                                <mean>0</mean>
+                                <stddev>0.009</stddev>
+                                <bias_mean>0.00075</bias_mean>
+                                <bias_stddev>0.005</bias_stddev>
+                                <dynamic_bias_stddev>0.00002</dynamic_bias_stddev>
+                                <dynamic_bias_correlation_time>400.0</dynamic_bias_correlation_time>
+                                <precision>0.00025</precision>
+                            </noise>
+                        </y>
+                        <z>
+                            <noise type="gaussian">
+                                <mean>0</mean>
+                                <stddev>0.009</stddev>
+                                <bias_mean>0.00075</bias_mean>
+                                <bias_stddev>0.005</bias_stddev>
+                                <dynamic_bias_stddev>0.00002</dynamic_bias_stddev>
+                                <dynamic_bias_correlation_time>400.0</dynamic_bias_correlation_time>
+                                <precision>0.00025</precision>
+                            </noise>
+                        </z>
+                    </angular_velocity>
+                    <linear_acceleration>
+                        <x>
+                            <noise type="gaussian">
+                                <mean>0</mean>
+                                <stddev>0.021</stddev>
+                                <bias_mean>0.05</bias_mean>
+                                <bias_stddev>0.005</bias_stddev>
+                                <dynamic_bias_stddev>0.000375</dynamic_bias_stddev>
+                                <dynamic_bias_correlation_time>175.0</dynamic_bias_correlation_time>
+                                <precision>0.005</precision>
+                            </noise>
+                        </x>
+                        <y>
+                            <noise type="gaussian">
+                                <mean>0</mean>
+                                <stddev>0.021</stddev>
+                                <bias_mean>0.05</bias_mean>
+                                <bias_stddev>0.005</bias_stddev>
+                                <dynamic_bias_stddev>0.000375</dynamic_bias_stddev>
+                                <dynamic_bias_correlation_time>175.0</dynamic_bias_correlation_time>
+                                <precision>0.005</precision>
+                            </noise>
+                        </y>
+                        <z>
+                            <noise type="gaussian">
+                                <mean>0</mean>
+                                <stddev>0.021</stddev>
+                                <bias_mean>0.05</bias_mean>
+                                <bias_stddev>0.005</bias_stddev>
+                                <dynamic_bias_stddev>0.000375</dynamic_bias_stddev>
+                                <dynamic_bias_correlation_time>175.0</dynamic_bias_correlation_time>
+                                <precision>0.005</precision>
+                            </noise>
+                        </z>
+                    </linear_acceleration>
+                </imu>
+                <topic>/limo_ackerman/imu<topic>
+            </sensor>
+            <sensor name="front_laser" type="gpu_lidar">
+                <visualize>0</visualize>
+                <update_rate>0</update_rate>
+                <lidar>
+                    <scan>
+                        <horizontal>
+                            <samples>720</samples>
+                            <resolution>1</resolution>
+                            <min_angle>-2.09439504</min_angle>
+                            <max_angel>-2.09439504</max_angel>
+                        </horizontal>
+                        <vertical>
+                            <samples>16</samples>
+                            <resolution>1</resolution>
+                            <min_angle>-0.261799</min_angle>
+                            <max_angel>-0.261799</max_angel>
+                        </vertical>
+                    </scan>
+                    <rang>
+                        <min>0.05</min>
+                        <max>8.0</max>
+                        <resolution>0.01</resolution>
+                    </rang>
+                    <noise>
+                        <type>gaussian</type>
+                        <mean>0</mean>
+                        <stddev>0.01</stddev>
+                    </noise>
+                </lidar>
+                <pose>0.103 0 0.116 0 -0 0</pose>
+                <topic>limo_ackerman/lidar</topic>
+            </sensor>
+        </link>
+        <joint name="left_steering_hinge_wheel" type="revolute">
+            <pose relative_to="base_footprint">0.1 0.07 0.049002 0 0 0</pose>
+            <parent>base_footprint</parent>
+            <child>left_steering_hinge</child>
+            <axis>
+                <xyz>0 0 1</xyz>
+                <limit lower="-0.523598767" upper="0.523598767" effort="5" velocity="0.5"/>
+                <dynamics>
+                    <damping>1</damping>
+                    <friction>2</friction>
+                    <spring_reference>0<spring_reference>
+                    <spring_stiffness>0<spring_stiffness>
+                </dynamics>
+            <axis>
+        </joint>
+        <link name="left_steering_hinge">
+            <pose relative_to="left_steering_hinge_wheel">0 0 0 0 0 0</pose>
+            <inertial>
+                <pose>0 0 0 0 0 0</pose>
+                <mass>0.25</mass>                
+                <inertia>
+                    <ixx>0.00525</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0.00035</iyy>
+                    <iyz>0</iyz>
+                    <izz>0.000525</izz>
+                </inertia>
+            </inertial>
+            <collision name="left_steering_hinge_collision">
+                <pose>0 0.0225 0 1.57079632 0 0</pose>
+                <geometry>
+                    <cylinder radius="0.035" length="0.045"/>
+                </geometry>
+            </collision>
+            <visual name="left_steering_hinge_visual">
+                <pose>0 0 0 0 0 0</pose>
+                <geometry>
+                    <cylinder radius="0.0001" length="0.0001"/>
+                </geometry>
+            </visual>
+        </link>
+        <joint name="front_left_wheel" type="revolute">
+            <pose relative_to="left_steering_hinge">0 0 0 0 0 0</pose>
+            <parent>left_steering_hinge</parent>
+            <child>front_left_wheel_link</child>
+            <axis>
+                <xyz>0 1 0</xyz>
+                <limit lower="-1e16" upper="1e16"/>
+                <dynamics>
+                    <damping>1</damping>
+                    <friction>2</friction>
+                    <spring_reference>0<spring_reference>
+                    <spring_stiffness>0<spring_stiffness>
+                </dynamics>
+            <axis>
+        </joint>
+        <link name="front_left_wheel_link">
+            <pose relative_to="front_left_wheel">0 0 0 0 0 0</pose>
+            <inertial>
+                <pose>0 0 0 0 0 0</pose>
+                <mass>0.25</mass>                
+                <inertia>
+                    <ixx>0.00525</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0.00035</iyy>
+                    <iyz>0</iyz>
+                    <izz>0.000525</izz>
+                </inertia>
+            </inertial>
+            <collision name="front_left_wheel_link_collision">
+                <pose>0 0.0225 0 1.57079632 0 0</pose>
+                <geometry>
+                    <cylinder radius="0.045" length="0.045"/>
+                </geometry>
+            </collision>
+            <visual name="front_left_wheel_link_visual">
+                <pose>0 0 0 0 0 0</pose>
+                <geometry>
+                    <mesh>
+                        <scale>1 1 1</scale>
+                        <uri>meshes/limo_wheel.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+        </link>
+        
+
+
+        
+    
