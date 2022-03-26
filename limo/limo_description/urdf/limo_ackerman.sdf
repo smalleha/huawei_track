@@ -220,22 +220,22 @@
                 </imu>
                 <topic>/limo/imu</topic>
             </sensor>
-            <sensor name="front_laser" type="gpu_lidar">
+            <sensor name="front_laser" type="lidar">
                 <visualize>0</visualize>
-                <update_rate>0</update_rate>
+                <update_rate>8</update_rate>
                 <lidar>
                     <scan>
                         <horizontal>
                             <samples>720</samples>
                             <resolution>1</resolution>
                             <min_angle>-2.09439504</min_angle>
-                            <max_angel>-2.09439504</max_angel>
+                            <max_angel>2.09439504</max_angel>
                         </horizontal>
                         <vertical>
                             <samples>16</samples>
                             <resolution>1</resolution>
                             <min_angle>-0.261799</min_angle>
-                            <max_angel>-0.261799</max_angel>
+                            <max_angel>0.261799</max_angel>
                         </vertical>
                     </scan>
                     <rang>

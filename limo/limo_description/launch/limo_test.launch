@@ -11,7 +11,7 @@
 
   <!-- URDF from param, package model -->
   <!-- <param name="robot_description" textfile="$(find limo_description)/urdf/limo_ackerman.xacro" /> -->
-    <param name="robot_description" command="$(find xacro)/xacro '$(find limo_description)/urdf/limo_four_diff.xacro'
+    <!-- <param name="robot_description" command="$(find xacro)/xacro '$(find limo_description)/urdf/limo_four_diff.xacro'
         robot_namespace:=$(arg robot_namespace)" />
     <node
       pkg="ros_ign_gazebo"
@@ -19,24 +19,34 @@
       name="$(anon ros_ign_create_sphere)"
       output="screen"
       args="-world $(arg world) -param robot_description -name spawned -allow_renaming true -z 0 -y -5.2 -x 1.15">
-    </node>
+    </node> -->
     <node
       pkg="ros_ign_gazebo"
       type="create"
       name="$(anon ros_ign_create_cylinder)"
       output="screen"
-      args="-world $(arg world) -file $(find track_v1)/models/model_2.sdf -name spawned -allow_renaming true -z -1.65 -y 0">
+      args="-world $(arg world) -file $(find limo_description)/urdf/limo_ackerman.sdf -name spawned -allow_renaming true -z 1 -y 0">
     </node>
-    <!-- <node
+    <node
     pkg="ros_ign_bridge"
     type="parameter_bridge"
     name="$(anon ros_ign_bridge)"
     output="screen"
-    args="/limo/cmd_vel@geometry_msgs/Twist@ignition.msgs.Twist /limo/odometry@nav_msgs/Odometry@ignition.msgs.Odometry
-          /limo/scan@sensor_msgs/LaserScan@ignition.msgs.LaserScan 
+    args="/limo/cmd_vel@geometry_msgs/Twist@ignition.msgs.Twist 
+          /modle/limo/odometry@nav_msgs/Odometry@ignition.msgs.Odometry
+          /limo/lidar@sensor_msgs/LaserScan@ignition.msgs.LaserScan
+          /limo/lidar/points@sensor_msgs/PointCloud2@ignition.msgs.PointCloudPacked
+          /limo/rgbd_camera/camera_info@sensor_msgs/CameraInfo@ignition.msgs.CameraInfo 
+          /limo/rgbd_camera/depth_image@sensor_msgs/Image@ignition.msgs.Image 
+          /limo/rgbd_camera/points@sensor_msgs/PointCloud2@ignition.msgs.PointCloudPacked
+          /clock@rosgraph_msgs/Clock[ignition.msgs.Clock
+          /model/limo/pose_static@geometry_msgs/PoseArray@ignition.msgs.Pose_V
+          /model/limo/pose@geometry_msgs/PoseArray@ignition.msgs.Pose_V
+          /limo/joint_states@sensor_msgs/JointState@ignition.msgs.Model
+
     ">
     </node>
-
+ <!--
     <node pkg="ros_ign_bridge" type="parameter_bridge" name="ros_ign_bridge_joint_state_publisher" respawn="true"
       args="/world/$(arg world)/model/$(arg name)/joint_state@sensor_msgs/JointState[ignition.msgs.Model">
       <remap from="/world/$(arg world)/model/$(arg name)/joint_state" to="joint_state"/>
