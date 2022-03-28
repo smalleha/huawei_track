@@ -1,0 +1,180 @@
+<?xml version='1.0'?>
+<sdf version='1.9'>
+ <static>true</static>
+    <!-- <world name="track_world">
+        <physics name="1ms" type="ignored">
+            <max_step_size>0.001</max_step_size>
+            <real_time_factor>1.0</real_time_factor>
+        </physics>
+        <plugin
+            filename="libignition-gazebo-physics-system.so"
+            name="ignition::gazebo::systems::Physics">
+        </plugin>
+        <plugin
+            filename="libignition-gazebo-user-commands-system.so"
+            name="ignition::gazebo::systems::UserCommands">
+        </plugin>
+        <plugin
+            filename="libignition-gazebo-scene-broadcaster-system.so"
+            name="ignition::gazebo::systems::SceneBroadcaster">
+        </plugin>
+
+        <gui fullscreen="0">
+
+            
+            <plugin filename="GzScene3D" name="3D View">
+                <ignition-gui>
+                <title>3D View</title>
+                <property type="bool" key="showTitleBar">false</property>
+                <property type="string" key="state">docked</property>
+                </ignition-gui>
+
+                <engine>ogre2</engine>
+                <scene>scene</scene>
+                <ambient_light>0.4 0.4 0.4</ambient_light>
+                <background_color>0.8 0.8 0.8</background_color>
+            </plugin>
+
+            
+            <plugin filename="WorldControl" name="World control">
+                <ignition-gui>
+                <title>World control</title>
+                <property type="bool" key="showTitleBar">false</property>
+                <property type="bool" key="resizable">false</property>
+                <property type="double" key="height">72</property>
+                <property type="double" key="width">121</property>
+                <property type="double" key="z">1</property>
+
+                <property type="string" key="state">floating</property>
+                <anchors target="3D View">
+                    <line own="left" target="left"/>
+                    <line own="bottom" target="bottom"/>
+                </anchors>
+                </ignition-gui>
+
+                <play_pause>true</play_pause>
+                <step>true</step>
+                <start_paused>true</start_paused>
+                <service>/world/track_world/control</service>
+                <stats_topic>/world/track_world/stats</stats_topic>
+            </plugin>
+
+            
+            <plugin filename="WorldStats" name="World stats">
+                <ignition-gui>
+                <title>World stats</title>
+                <property type="bool" key="showTitleBar">false</property>
+                <property type="bool" key="resizable">false</property>
+                <property type="double" key="height">110</property>
+                <property type="double" key="width">290</property>
+                <property type="double" key="z">1</property>
+
+                <property type="string" key="state">floating</property>
+                <anchors target="3D View">
+                    <line own="right" target="right"/>
+                    <line own="bottom" target="bottom"/>
+                </anchors>
+                </ignition-gui>
+
+                <sim_time>true</sim_time>
+                <real_time>true</real_time>
+                <real_time_factor>true</real_time_factor>
+                <iterations>true</iterations>
+                <topic>/world/track_world/stats</topic>
+
+            </plugin>
+
+            
+            <plugin filename="EntityTree" name="Entity tree">
+            </plugin>
+
+        </gui>
+
+        <light type="directional" name="sun">
+            <cast_shadows>true</cast_shadows>
+            <pose>0 0 10 0 0 0</pose>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+            <attenuation>
+                <range>1000</range>
+                <constant>0.9</constant>
+                <linear>0.01</linear>
+                <quadratic>0.001</quadratic>
+            </attenuation>
+            <direction>-0.5 0.1 -0.9</direction>
+        </light>
+
+        <model name="ground_plane">
+            <static>true</static>
+            <link name="link">
+                <collision name="collision">
+                <geometry>
+                    <plane>
+                    <normal>0 0 1</normal>
+                    </plane>
+                </geometry>
+                </collision>
+                <visual name="visual">
+                <geometry>
+                    <plane>
+                    <normal>0 0 1</normal>
+                    <size>100 100</size>
+                    </plane>
+                </geometry>
+                <material>
+                    <ambient>0.8 0.8 0.8 1</ambient>
+                    <diffuse>0.8 0.8 0.8 1</diffuse>
+                    <specular>0.8 0.8 0.8 1</specular>
+                </material>
+                </visual>
+            </link>
+        </model> -->
+ <model name='track_v1' canonical_link='track_link'>
+    <!-- <pose relative_to='world'>0 0 0 0 0 0</pose> -->
+    <link name='track_link'>
+      <!-- <pose relative_to='__model__'>0 0 0 0 -0 0</pose> -->
+      <inertial>
+        <mass>10</mass>
+        <inertia>
+          <ixx>50884</ixx>
+          <ixy>4560.7</ixy>
+          <ixz>15.972</ixz>
+          <iyy>119060</iyy>
+          <iyz>-32.172</iyz>
+          <izz>168440</izz>
+        </inertia>
+      </inertial>
+      <collision name='track_link_collision'>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>meshes/track_v4.dae</uri>
+          </mesh>
+       <!--     <box>
+                <size>2.0 1.0 0.5</size>
+            </box>-->
+	     <surface>
+          <friction>
+            <ode>
+              <mu>100</mu>
+              <mu2>50</mu2>
+            </ode>
+          </friction>
+        </surface>
+        </geometry>
+      </collision>
+      <visual name='track_link_visual'>
+        <geometry>
+         <mesh>
+            <scale>1 1 1</scale>
+            <uri>meshes/track_v4.dae</uri>
+          </mesh>
+        <!--     <box>
+                <size>2.0 1.0 0.5</size>
+            </box>-->
+        </geometry>
+      </visual>
+    </link>
+  </model>
+<!-- </world> -->
+</sdf>
