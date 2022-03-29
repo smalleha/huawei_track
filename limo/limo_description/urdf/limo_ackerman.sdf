@@ -220,7 +220,7 @@
                 </imu>
                 <topic>/limo/imu</topic>
             </sensor>
-            <sensor name="front_laser" type="lidar">
+            <sensor name="front_laser" type="gpu_lidar">
                 <visualize>0</visualize>
                 <update_rate>8</update_rate>
                 <lidar>

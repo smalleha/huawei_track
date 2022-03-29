@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="robot_namespace" default="/"/>
+  <arg name="world" default="empty"/>
+  <arg name="ign_args" default=""/>
+  <arg name="name" default="limo"/>
+
+  <include file="$(find ros_ign_gazebo)/launch/ign_gazebo.launch">
+    <arg name="ign_args" value="-r -v 3 $(find limo_description)/urdf/limo_ackerman.world"/>
+  </include>
+
+    <node
+    pkg="ros_ign_bridge"
+    type="parameter_bridge"
+    name="$(anon ros_ign_bridge)"
+    output="screen"
+    args="/limo/cmd_vel@geometry_msgs/Twist@ignition.msgs.Twist 
+          /modle/limo/odometry@nav_msgs/Odometry@ignition.msgs.Odometry
+          /limo/lidar@sensor_msgs/LaserScan@ignition.msgs.LaserScan
+          /limo/lidar/points@sensor_msgs/PointCloud2@ignition.msgs.PointCloudPacked
+          /limo/rgbd_camera/camera_info@sensor_msgs/CameraInfo@ignition.msgs.CameraInfo 
+          /limo/rgbd_camera/depth_image@sensor_msgs/Image@ignition.msgs.Image 
+          /limo/rgbd_camera/points@sensor_msgs/PointCloud2@ignition.msgs.PointCloudPacked
+          /clock@rosgraph_msgs/Clock[ignition.msgs.Clock
+          /limo/joint_states@sensor_msgs/JointState@ignition.msgs.Model
+          /limo/tf/pose@tf2_msgs/TFMessage[ignition.msgs.Pose_V
+          /model/limo/pose_static@geometry_msgs/PoseArray@ignition.msgs.Pose_V
+          /model/limo/pose@geometry_msgs/PoseArray@ignition.msgs.Pose_V
+          /limo/joint_states@sensor_msgs/JointState@ignition.msgs.Model
+    ">
+    </node>
+
+</launch>
