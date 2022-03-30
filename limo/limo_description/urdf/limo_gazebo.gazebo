@@ -30,7 +30,7 @@
 
     <xacro:macro name="gazebo_laser" params="frame_prefix">
         <gazebo reference="${frame_prefix}_link">
-            <!-- <sensor type="ray" name="laser_sensor">
+            <sensor type="ray" name="laser_sensor">
               <pose>0 0 0 0 0 0</pose>
               <visualize>false</visualize>
               <update_rate>8</update_rate>
@@ -58,8 +58,8 @@
                 <topicName>/limo/scan</topicName>
                 <frameName>laser_link</frameName>
               </plugin>
-            </sensor> -->
-              <!-- <sensor name="simple_rplidar_a2" type="gpu_lidar">
+            </sensor>
+              <sensor name="simple_rplidar_a2" type="gpu_lidar">
                 <pose>0 0 0.03 0 0 0</pose>
                 <always_on>true</always_on>
                 <visualize>true</visualize>
@@ -88,10 +88,10 @@
                 <topicName>/limo/scan</topicName>
                 <frameName>laser_link</frameName>
               </plugin>
-          </gazebo> -->
+          </gazebo>
     </xacro:macro>
         
-    <!-- <xacro:macro name="gazebo_depth_camera" params="frame_prefix">
+    <xacro:macro name="gazebo_depth_camera" params="frame_prefix">
         <gazebo reference="${frame_prefix}_link">
           <sensor name="sensor_camera" type="depth">
             <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
@@ -109,9 +109,9 @@
                   <near>0.02</near>
                   <far>300</far>
               </clip>
-            </camera> -->
+            </camera>
 
-            <!-- <plugin name="gazebo_ros_depth_camera_sensor" filename="libignition-gazebo3-kinetic-energy-monitor-system.so">
+            <plugin name="gazebo_ros_depth_camera_sensor" filename="libignition-gazebo3-kinetic-energy-monitor-system.so">
               <baseline>0.2</baseline>
               <alwaysOn>true</alwaysOn>
               <updateRate>0.0</updateRate>
@@ -139,9 +139,9 @@
             </plugin>
         </sensor>
           </gazebo>
-    </xacro:macro> -->
+    </xacro:macro>
 
-    <!-- <xacro:macro name="gazebo_imu" params="frame_prefix">
+    <xacro:macro name="gazebo_imu" params="frame_prefix">
       <gazebo reference="${frame_prefix}_link">
         <gravity>true</gravity>
         <sensor name="imu_sensor" type="imu">
@@ -161,5 +161,5 @@
           <pose>0 0 0 0 0 0</pose>
         </sensor>
       </gazebo>
-  </xacro:macro> -->
+  </xacro:macro>
 </robot>

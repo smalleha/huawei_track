@@ -5,6 +5,13 @@
   <arg name="ign_args" default=""/>
   <arg name="name" default="limo"/>
 
+  <node pkg="tf" type="static_transform_publisher" name="base_link_to_camera_link" 
+  args="0.105 0 0.1 0.0 0.0 0.0 /base_link /camera_link 10" />
+  <node pkg="tf" type="static_transform_publisher" name="base_link_to_imu_link" 
+  args="0.0 0.0 0.0 0.0 0.0 0.0 /base_link /imu_link 10" /> 
+  <node pkg="tf" type="static_transform_publisher" name="base_link_to_laser_link" 
+  args="0.105 0.0 0.08 0.0 0.0 0.0 /base_link /limo/limo_lidar/laser_link/gpu_lidar 10" />
+
   <include file="$(find ros_ign_gazebo)/launch/ign_gazebo.launch">
     <arg name="ign_args" value="-r -v 3 $(find limo_description)/urdf/limo_ackerman.world"/>
   </include>
@@ -27,6 +34,9 @@
           /model/limo/pose_static@geometry_msgs/PoseArray@ignition.msgs.Pose_V
           /model/limo/pose@geometry_msgs/PoseArray@ignition.msgs.Pose_V
           /limo/joint_states@sensor_msgs/JointState@ignition.msgs.Model
+
+          /lidar@sensor_msgs/LaserScan@ignition.msgs.LaserScan
+          /lidar/points@sensor_msgs/PointCloud2@ignition.msgs.PointCloudPacked
     ">
     </node>
 

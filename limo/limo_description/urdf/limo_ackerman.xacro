@@ -5,7 +5,7 @@
     <xacro:arg name="robot_namespace" default="/" />
     <xacro:include filename="$(find limo_description)/urdf/limo_xacro.xacro" />
     <xacro:include filename="$(find limo_description)/urdf/limo_steering_hinge.xacro" />
-    <!-- <xacro:include filename="$(find limo_description)/urdf/limo_ackerman.gazebo" /> -->
+    <xacro:include filename="$(find limo_description)/urdf/limo_ackerman.gazebo" />
 
     <!-- Variables -->
     <xacro:property name="M_PI" value="3.14159"/>
