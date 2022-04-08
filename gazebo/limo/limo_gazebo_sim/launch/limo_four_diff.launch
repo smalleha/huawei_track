@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <launch>
     <arg name="robot_namespace" default="/"/>
-    <arg name="world_name" default="$(find limo_gazebo_sim)/worlds/track_v1.world"/>
+    <!-- <arg name="world_name" default="$(find track_v1)/world/track_v2.world"/> -->
+    <arg name="world_name" default="$(find limo_gazebo_sim)/worlds/track_v10.world"/>
 
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
         <arg name="world_name" value="$(arg world_name)"/>
@@ -12,22 +13,33 @@
         <arg name="debug" value="false"/>
     </include>
 
+    <!-- initial pose -->
+    <arg name="x" default="0"/>
+    <arg name="y" default="0"/>
+    <arg name="z" default="0"/>
+    <arg name="yaw" default="0.0"/>
+
     <param name="robot_description" command="$(find xacro)/xacro '$(find limo_description)/urdf/limo_four_diff.xacro'
         robot_namespace:=$(arg robot_namespace)" />
+    <!-- <node
+        name="spawn_model"
+        pkg="gazebo_ros"
+        type="spawn_model"
+        args="-file $(find track_v1)/urdf/track_v2.urdf -urdf -model track_v2 
+              -x 0
+              -y 0
+              -z 0
+              -Y 0"
+        output="screen" /> -->
 
-    <!-- initial pose -->
-    <arg name="x" default="0.0"/>
-    <arg name="y" default="0.0"/>
-    <arg name="z" default="10.0"/>
-    <arg name="yaw" default="0.0"/>
-    <node name="spawn_limo_model" pkg="gazebo_ros" type="spawn_model" args="-x $(arg x)
+    <!-- <node name="spawn_limo_model" pkg="gazebo_ros" type="spawn_model" args="-x $(arg x)
               -y $(arg y)
               -z $(arg z)
               -Y $(arg yaw)
               -unpause
               -urdf
               -param robot_description
-              -model 'limo$(arg robot_namespace)'" />
+              -model 'limo$(arg robot_namespace)'" /> -->
 
     <!-- Load joint controller configurations from YAML file to parameter server -->
     <rosparam file="$(find limo_gazebo_sim)/config/limo_four_diff_control.yaml" command="load"/>
