@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="track_v5">
+  <link
+    name="base_link">
+  </link>
+  <link
+    name="track_Link">
+    <inertial>
+      <origin
+        xyz="-0.040297 1.0699 0.50079"
+        rpy="0 0 0" />
+      <mass
+        value="5800.2" />
+      <inertia
+        ixx="31576"
+        ixy="2108"
+        ixz="78.334"
+        iyy="42308"
+        iyz="15.279"
+        izz="73548" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track_v5/meshes/track_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track_v5/meshes/track_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="track_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="track_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="start_Link">
+    <inertial>
+      <origin
+        xyz="4.4409E-16 8.8818E-16 -0.00016245"
+        rpy="0 0 0" />
+      <mass
+        value="0.27481" />
+      <inertia
+        ixx="0.014324"
+        ixy="-3.5297E-05"
+        ixz="-3.1304E-19"
+        iyy="0.0049099"
+        iyz="-4.6303E-19"
+        izz="0.019234" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track_v5/meshes/start_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track_v5/meshes/start_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="start_joint"
+    type="fixed">
+    <origin
+      xyz="1.5972 -5.9217 0.40276"
+      rpy="0 0 0.005014" />
+    <parent
+      link="track_Link" />
+    <child
+      link="start_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="traffic_Link">
+    <inertial>
+      <origin
+        xyz="-0.004653 -0.0033567 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.45192" />
+      <inertia
+        ixx="0.00054476"
+        ixy="1.2933E-06"
+        ixz="-4.9541E-20"
+        iyy="0.00028682"
+        iyz="-2.4586E-22"
+        izz="0.00028682" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track_v5/meshes/traffic_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track_v5/meshes/traffic_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="traffic_joint"
+    type="fixed">
+    <origin
+      xyz="1.5422 -5.922 0.9308"
+      rpy="0 0 0" />
+    <parent
+      link="track_Link" />
+    <child
+      link="traffic_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="plant1_Link">
+    <inertial>
+      <origin
+        xyz="-1.843E-13 2.6645E-15 -0.38022"
+        rpy="0 0 0" />
+      <mass
+        value="1090.8" />
+      <inertia
+        ixx="84.984"
+        ixy="5.6107E-15"
+        ixz="1.8011E-13"
+        iyy="576.13"
+        iyz="9.5863E-14"
+        izz="556.2" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track_v5/meshes/plant1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track_v5/meshes/plant1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="plant1_joint"
+    type="fixed">
+    <origin
+      xyz="2.94 4.5767 1.1632"
+      rpy="0 0 0" />
+    <parent
+      link="track_Link" />
+    <child
+      link="plant1_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="plant2_Link">
+    <inertial>
+      <origin
+        xyz="1.1102E-16 0 -0.38022"
+        rpy="0 0 0" />
+      <mass
+        value="1090.8" />
+      <inertia
+        ixx="84.984"
+        ixy="-3.2255E-15"
+        ixz="-2.6558E-15"
+        iyy="576.13"
+        iyz="1.0011E-15"
+        izz="556.2" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track_v5/meshes/plant2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track_v5/meshes/plant2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="plant2_joint"
+    type="fixed">
+    <origin
+      xyz="-0.95 4.5767 1.1632"
+      rpy="0 0 0" />
+    <parent
+      link="track_Link" />
+    <child
+      link="plant2_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="plant3_Link">
+    <inertial>
+      <origin
+        xyz="4.4409E-16 0 -0.38022"
+        rpy="0 0 0" />
+      <mass
+        value="1090.8" />
+      <inertia
+        ixx="84.984"
+        ixy="9.2157E-16"
+        ixz="-1.5504E-14"
+        iyy="576.13"
+        iyz="6.8467E-16"
+        izz="556.2" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track_v5/meshes/plant3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track_v5/meshes/plant3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="plant3_joint"
+    type="fixed">
+    <origin
+      xyz="-3.35 4.5767 1.1632"
+      rpy="0 0 0" />
+    <parent
+      link="track_Link" />
+    <child
+      link="plant3_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="plant4_Link">
+    <inertial>
+      <origin
+        xyz="0 0 -0.38022"
+        rpy="0 0 0" />
+      <mass
+        value="1090.8" />
+      <inertia
+        ixx="84.984"
+        ixy="6.7559E-14"
+        ixz="-4.8779E-14"
+        iyy="576.13"
+        iyz="-1.0843E-14"
+        izz="556.2" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track_v5/meshes/plant4_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track_v5/meshes/plant4_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="plant4_joint"
+    type="fixed">
+    <origin
+      xyz="1.75 2.9767 1.1632"
+      rpy="0 0 0" />
+    <parent
+      link="track_Link" />
+    <child
+      link="plant4_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="plant5_Link">
+    <inertial>
+      <origin
+        xyz="7.7716E-16 0 -0.38022"
+        rpy="0 0 0" />
+      <mass
+        value="1090.8" />
+      <inertia
+        ixx="84.984"
+        ixy="-8.7143E-15"
+        ixz="-1.0391E-12"
+        iyy="576.13"
+        iyz="3.5669E-15"
+        izz="556.2" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track_v5/meshes/plant5_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track_v5/meshes/plant5_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="plant5_joint"
+    type="fixed">
+    <origin
+      xyz="-0.65 2.9767 1.1632"
+      rpy="0 0 0" />
+    <parent
+      link="track_Link" />
+    <child
+      link="plant5_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="plant6_Link">
+    <inertial>
+      <origin
+        xyz="0 0 -0.38022"
+        rpy="0 0 0" />
+      <mass
+        value="1090.8" />
+      <inertia
+        ixx="84.984"
+        ixy="1.4962E-14"
+        ixz="-8.3181E-15"
+        iyy="576.13"
+        iyz="8.7316E-15"
+        izz="556.2" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track_v5/meshes/plant6_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track_v5/meshes/plant6_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="plant6_joint"
+    type="fixed">
+    <origin
+      xyz="-4.55 2.9767 1.1632"
+      rpy="0 0 0" />
+    <parent
+      link="track_Link" />
+    <child
+      link="plant6_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="plant7_Link">
+    <inertial>
+      <origin
+        xyz="0 0 -0.38022"
+        rpy="0 0 0" />
+      <mass
+        value="1090.8" />
+      <inertia
+        ixx="84.984"
+        ixy="-2.8929E-13"
+        ixz="5.3568E-14"
+        iyy="576.13"
+        iyz="-1.0374E-14"
+        izz="556.2" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track_v5/meshes/plant7_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track_v5/meshes/plant7_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="plant7_joint"
+    type="fixed">
+    <origin
+      xyz="2.95 1.3767 1.1632"
+      rpy="0 0 0" />
+    <parent
+      link="track_Link" />
+    <child
+      link="plant7_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="plant8_Link">
+    <inertial>
+      <origin
+        xyz="2.2204E-16 0 -0.38022"
+        rpy="0 0 0" />
+      <mass
+        value="1090.8" />
+      <inertia
+        ixx="84.984"
+        ixy="4.0447E-14"
+        ixz="-1.4343E-13"
+        iyy="576.13"
+        iyz="-8.3036E-15"
+        izz="556.2" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track_v5/meshes/plant8_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track_v5/meshes/plant8_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="plant8_joint"
+    type="fixed">
+    <origin
+      xyz="-0.95 1.3767 1.1632"
+      rpy="0 0 0" />
+    <parent
+      link="track_Link" />
+    <child
+      link="plant8_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="plant9_Link">
+    <inertial>
+      <origin
+        xyz="0 0 -0.38022"
+        rpy="0 0 0" />
+      <mass
+        value="1090.8" />
+      <inertia
+        ixx="84.984"
+        ixy="7.481E-15"
+        ixz="9.9028E-14"
+        iyy="576.13"
+        iyz="5.9373E-15"
+        izz="556.2" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track_v5/meshes/plant9_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track_v5/meshes/plant9_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="plant9_joint"
+    type="fixed">
+    <origin
+      xyz="-3.35 1.3767 1.1632"
+      rpy="0 0 0" />
+    <parent
+      link="track_Link" />
+    <child
+      link="plant9_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="green_belt_Link">
+    <inertial>
+      <origin
+        xyz="-0.19058 -0.46698 0.40895"
+        rpy="0 0 0" />
+      <mass
+        value="8.9923" />
+      <inertia
+        ixx="158.34"
+        ixy="-62.989"
+        ixz="0.3112"
+        iyy="463.68"
+        iyz="0.048284"
+        izz="622.01" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track_v5/meshes/green_belt_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track_v5/meshes/green_belt_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gree_belt_joint"
+    type="prismatic">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="track_Link" />
+    <child
+      link="green_belt_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>
