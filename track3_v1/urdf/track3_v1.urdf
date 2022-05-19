@@ -150,7 +150,7 @@
   </link>
   <joint
     name="gree_joint"
-    type="fixed">
+    type="prismatic">
     <origin
       xyz="0 0 0"
       rpy="0 0 0" />
@@ -159,7 +159,12 @@
     <child
       link="green_Link" />
     <axis
-      xyz="0 0 0" />
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
   </joint>
   <link
     name="track_Link">
@@ -183,7 +188,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://track3_v1/meshes/track.dae" />
+          filename="package://track3_v1/meshes/track3_v1.dae" />
       </geometry>
       <material
         name="">
@@ -197,7 +202,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://track3_v1/meshes/track.dae" />
+          filename="package://track3_v1/meshes/track3_v1.dae" />
       </geometry>
     </collision>
   </link>
