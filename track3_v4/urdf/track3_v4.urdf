@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="track3_v4">
+  <link
+    name="base_link">
+  
+  </link>
+  <link
+    name="start_link">
+    <inertial>
+      <origin
+        xyz="-4.32986979603811E-15 4.44089209850063E-16 -0.000106249999999992"
+        rpy="0 0 0" />
+      <mass
+        value="0.094080000000001" />
+      <inertia
+        ixx="0.00506363272152495"
+        ixy="6.31138807377998E-18"
+        ixz="-2.05891115814568E-19"
+        iyy="0.00141926472152495"
+        iyz="4.96500945518182E-20"
+        izz="0.0064828959999999" />
+    </inertial>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track3_v4/meshes/start_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="start_jiont"
+    type="fixed">
+    <origin
+      xyz="0.0502 -5.5 0.02025"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="start_link" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="parcking_link">
+    <inertial>
+      <origin
+        xyz="1.24344978758018E-14 1.11022302462516E-15 -5.00000000000361E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.00751999999999994" />
+      <inertia
+        ixx="0.000290194672933331"
+        ixy="-1.37404398043828E-17"
+        ixz="-1.89144730177403E-19"
+        iyy="0.00084680267293343"
+        iyz="-9.47161436868693E-21"
+        izz="0.00113699733333343" />
+    </inertial>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track3_v4/meshes/parcking_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="parckling_joint"
+    type="fixed">
+    <origin
+      xyz="5.9402 -4.82 0.0203"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="parcking_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="bumps1_link">
+    <inertial>
+      <origin
+        xyz="5.1875382433675 -2.4655991498413 0.0330897713115452"
+        rpy="0 0 0" />
+      <mass
+        value="1863.70221922842" />
+      <inertia
+        ixx="18151.897579971"
+        ixy="-12532.7755939213"
+        ixz="-0.643659731166868"
+        iyy="61185.6982832296"
+        iyz="-0.291164498938179"
+        izz="79324.7872144186" />
+    </inertial>
+    <collision>
+      <origin
+        xyz="0 0 -0.01"
+        rpy="0 0 0" />
+      <geometry>
+      <box size="0.5 0.6 0.02"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bumps1_joint"
+    type="fixed">
+    <origin
+      xyz="-7.609 5.5 0.02025"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="bumps1_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="bumps2_link">
+    <inertial>
+      <origin
+        xyz="5.1875382433675 -4.4655991498413 0.0330897713115452"
+        rpy="0 0 0" />
+      <mass
+        value="1863.70221922842" />
+      <inertia
+        ixx="18151.897579971"
+        ixy="-12532.7755939213"
+        ixz="-0.643659731166868"
+        iyy="61185.6982832296"
+        iyz="-0.291164498938179"
+        izz="79324.7872144186" />
+    </inertial>
+    <collision>
+      <origin
+        xyz="0 0 -0.01"
+        rpy="0 0 0" />
+      <geometry>
+      <box size="0.5 0.6 0.02"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bumps2_joint"
+    type="fixed">
+    <origin
+      xyz="-7.609 2.5 0.02025"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="bumps2_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+  <link
+    name="green_Link">
+    <inertial>
+      <origin
+        xyz="-0.470735903563987 0.566261266264494 0.0200999999999958"
+        rpy="0 0 0" />
+      <mass
+        value="2.15594097411181" />
+      <inertia
+        ixx="9.45583555974584"
+        ixy="-6.251344742137"
+        ixz="-1.27624195024104E-14"
+        iyy="52.527303111184"
+        iyz="3.0253351146191E-16"
+        izz="61.9831386565569" />
+    </inertial>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track3_v4/meshes/green_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gree_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="green_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="track_Link">
+    <inertial>
+      <origin
+        xyz="2.13038792152675 0.515145131376862 0.124896764072089"
+        rpy="0 0 0" />
+      <mass
+        value="5074.50736598916" />
+      <inertia
+        ixx="29722.5245190942"
+        ixy="-12835.5291785909"
+        ixz="50.6033641159626"
+        iyy="93001.1529090615"
+        iyz="-0.480541751497473"
+        izz="122393.838111133" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0.2 -5.95 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track3_v4/meshes/track3_v8.2.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0.2 -5.95 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track3_v4/meshes/track3_v8.2.dae" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="track_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="track_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="plant1_Link">
+    <inertial>
+      <origin
+        xyz="0 8.88178419700125E-16 -0.380223713393525"
+        rpy="0 0 0" />
+      <mass
+        value="1090.83858336053" />
+      <inertia
+        ixx="84.9844742925411"
+        ixy="-1.62955586524571E-13"
+        ixz="1.68499922341508E-12"
+        iyy="576.1257266779"
+        iyz="-7.83546175200574E-15"
+        izz="556.200077325058" />
+    </inertial>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track3_v4/meshes/plant1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="plant1_joint"
+    type="fixed">
+    <origin
+      xyz="8.9598 -1.15 0.781"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="plant1_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="plant2_Link">
+    <inertial>
+      <origin
+        xyz="-1.77635683940025E-15 8.88178419700125E-16 -0.380223713393525"
+        rpy="0 0 0" />
+      <mass
+        value="1090.83858336053" />
+      <inertia
+        ixx="84.984474292541"
+        ixy="1.71737624121704E-13"
+        ixz="1.40559707659638E-12"
+        iyy="576.125726677901"
+        iyz="5.00317841119754E-15"
+        izz="556.200077325059" />
+    </inertial>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track3_v4/meshes/plant2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="plant2_joint"
+    type="fixed">
+    <origin
+      xyz="5.0598 -1.15 0.781"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="plant2_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="plant3_Link">
+    <inertial>
+      <origin
+        xyz="-1.77635683940025E-15 0 -0.380223713393525"
+        rpy="0 0 0" />
+      <mass
+        value="1090.83858336053" />
+      <inertia
+        ixx="84.9844742925411"
+        ixy="1.1221492485225E-13"
+        ixz="1.64069548476305E-12"
+        iyy="576.1257266779"
+        iyz="-8.79604189001007E-15"
+        izz="556.200077325058" />
+    </inertial>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track3_v4/meshes/plant3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="plan3_joint"
+    type="fixed">
+    <origin
+      xyz="2.6598 -1.15 0.781"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="plant3_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="plant4_Link">
+    <inertial>
+      <origin
+        xyz="-8.88178419700125E-16 0 -0.380223713393525"
+        rpy="0 0 0" />
+      <mass
+        value="1090.83858336053" />
+      <inertia
+        ixx="84.984474292541"
+        ixy="2.18087266995459E-13"
+        ixz="1.46392335438254E-12"
+        iyy="576.125726677901"
+        iyz="6.5565655220984E-15"
+        izz="556.200077325059" />
+    </inertial>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track3_v4/meshes/plant4_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="plant4_joint"
+    type="fixed">
+    <origin
+      xyz="7.7598 0.45 0.781"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="plant4_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="plant5_Link">
+    <inertial>
+      <origin
+        xyz="-1.7764E-15 0 -0.38022"
+        rpy="0 0 0" />
+      <mass
+        value="1090.8" />
+      <inertia
+        ixx="84.984"
+        ixy="2.2565E-14"
+        ixz="1.6674E-12"
+        iyy="576.13"
+        iyz="2.8665E-16"
+        izz="556.2" />
+    </inertial>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track3_v4/meshes/plant5_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="plant5_joint"
+    type="fixed">
+    <origin
+      xyz="5.3598 0.45 0.781"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="plant5_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="plant6_Link">
+    <inertial>
+      <origin
+        xyz="-1.5543E-15 0 -0.38022"
+        rpy="0 0 0" />
+      <mass
+        value="1090.8" />
+      <inertia
+        ixx="84.984"
+        ixy="1.1948E-13"
+        ixz="1.6782E-12"
+        iyy="576.13"
+        iyz="-3.0036E-15"
+        izz="556.2" />
+    </inertial>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track3_v4/meshes/plant6_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="plant6_joint"
+    type="fixed">
+    <origin
+      xyz="1.4598 0.45 0.781"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="plant6_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="plant7_Link">
+    <inertial>
+      <origin
+        xyz="4.6185E-14 0 -0.38022"
+        rpy="0 0 0" />
+      <mass
+        value="1090.8" />
+      <inertia
+        ixx="84.984"
+        ixy="1.0433E-13"
+        ixz="1.7532E-12"
+        iyy="576.13"
+        iyz="8.8858E-14"
+        izz="556.2" />
+    </inertial>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track3_v4/meshes/plant7_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="plant7_joint"
+    type="fixed">
+    <origin
+      xyz="8.9498 2.05 0.781"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="plant7_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="plant8_Link">
+    <inertial>
+      <origin
+        xyz="-1.7764E-15 8.8818E-16 -0.38022"
+        rpy="0 0 0" />
+      <mass
+        value="1090.8" />
+      <inertia
+        ixx="84.984"
+        ixy="1.761E-13"
+        ixz="1.7825E-12"
+        iyy="576.13"
+        iyz="9.9395E-14"
+        izz="556.2" />
+    </inertial>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track3_v4/meshes/plant8_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="plant8_joint"
+    type="fixed">
+    <origin
+      xyz="5.0598 2.05 0.781"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="plant8_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="plant9_Link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://track3_v4/meshes/plant9_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="plant9_joint"
+    type="fixed">
+    <origin
+      xyz="2.6598 2.05 0.781"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="plant9_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

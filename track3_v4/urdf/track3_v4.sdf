@@ -1,0 +1,271 @@
+<sdf version='1.6'>
+  <model name='track3_v4'>
+    <link name='base_link'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>3.55374 0.667101 0.270036 0 -0 0</pose>
+        <mass>15667</mass>
+        <inertia>
+          <ixx>74604.6</ixx>
+          <ixy>2332.65</ixy>
+          <ixz>-5815.17</ixz>
+          <iyy>333149</iyy>
+          <iyz>1319.04</iyz>
+          <izz>405884</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_fixed_joint_lump__bumps_link_collision'>
+        <pose frame=''>-7.609 5.5 0.02025 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://track3_v4/meshes/bumps_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__green_Link_collision_1'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://track3_v4/meshes/green_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__parcking_link_collision_2'>
+        <pose frame=''>5.9402 -4.82 0.0203 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://track3_v4/meshes/parcking_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__plant3_Link_collision_3'>
+        <pose frame=''>2.6598 -1.15 0.781 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://track3_v4/meshes/plant3_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__plant1_Link_collision_4'>
+        <pose frame=''>8.9598 -1.15 0.781 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://track3_v4/meshes/plant1_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__plant2_Link_collision_5'>
+        <pose frame=''>5.0598 -1.15 0.781 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://track3_v4/meshes/plant2_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__plant4_Link_collision_6'>
+        <pose frame=''>7.7598 0.45 0.781 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://track3_v4/meshes/plant4_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__plant5_Link_collision_7'>
+        <pose frame=''>5.3598 0.45 0.781 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://track3_v4/meshes/plant5_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__plant6_Link_collision_8'>
+        <pose frame=''>1.4598 0.45 0.781 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://track3_v4/meshes/plant6_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__plant7_Link_collision_9'>
+        <pose frame=''>8.9498 2.05 0.781 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://track3_v4/meshes/plant7_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__plant8_Link_collision_10'>
+        <pose frame=''>5.0598 2.05 0.781 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://track3_v4/meshes/plant8_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__plant9_Link_collision_11'>
+        <pose frame=''>2.6598 2.05 0.781 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://track3_v4/meshes/plant9_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__start_link_collision_12'>
+        <pose frame=''>0.0502 -5.5 0.02025 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://track3_v4/meshes/start_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__track_Link_collision_13'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://track3_v4/meshes/track_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_fixed_joint_lump__bumps_link_visual'>
+        <pose frame=''>-7.609 5.5 0.02025 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://track3_v4/meshes/bumps_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__green_Link_visual_1'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://track3_v4/meshes/green_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__parcking_link_visual_2'>
+        <pose frame=''>5.9402 -4.82 0.0203 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://track3_v4/meshes/parcking_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__plant3_Link_visual_3'>
+        <pose frame=''>2.6598 -1.15 0.781 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://track3_v4/meshes/plant3_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__plant1_Link_visual_4'>
+        <pose frame=''>8.9598 -1.15 0.781 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://track3_v4/meshes/plant1_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__plant2_Link_visual_5'>
+        <pose frame=''>5.0598 -1.15 0.781 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://track3_v4/meshes/plant2_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__plant4_Link_visual_6'>
+        <pose frame=''>7.7598 0.45 0.781 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://track3_v4/meshes/plant4_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__plant5_Link_visual_7'>
+        <pose frame=''>5.3598 0.45 0.781 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://track3_v4/meshes/plant5_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__plant6_Link_visual_8'>
+        <pose frame=''>1.4598 0.45 0.781 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://track3_v4/meshes/plant6_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__plant7_Link_visual_9'>
+        <pose frame=''>8.9498 2.05 0.781 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://track3_v4/meshes/plant7_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__plant8_Link_visual_10'>
+        <pose frame=''>5.0598 2.05 0.781 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://track3_v4/meshes/plant8_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__plant9_Link_visual_11'>
+        <pose frame=''>2.6598 2.05 0.781 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://track3_v4/meshes/plant9_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__start_link_visual_12'>
+        <pose frame=''>0.0502 -5.5 0.02025 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://track3_v4/meshes/start_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__track_Link_visual_13'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://track3_v4/meshes/track3_v5.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
